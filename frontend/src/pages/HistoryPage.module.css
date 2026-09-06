@@ -1,0 +1,60 @@
+.page { display: flex; flex-direction: column; gap: 1.75rem; }
+.title { font-size: 1.9rem; font-weight: 800; color: var(--primary); }
+.sub   { color: var(--muted2); font-size: .95rem; }
+
+.empty {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 1rem; padding: 5rem 2rem; text-align: center;
+}
+.empty h2 { font-size: 1.4rem; color: var(--text); }
+.empty p  { color: var(--muted2); }
+
+.btn {
+  margin-top: .5rem;
+  padding: 11px 28px;
+  background: var(--primary); color: #fff;
+  border: none; border-radius: 99px;
+  font-size: .9rem; font-weight: 600;
+  cursor: pointer; transition: all var(--trans);
+  display: flex; align-items: center; gap: 8px;
+}
+.btn:hover { background: var(--primary-dk); transform: translateY(-1px); }
+
+.list { display: flex; flex-direction: column; gap: 12px; }
+
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--trans);
+  flex-wrap: wrap;
+}
+.card:hover { box-shadow: var(--shadow); }
+
+.cardLeft { display: flex; align-items: center; gap: 14px; }
+.badge {
+  padding: 5px 14px; border-radius: 99px;
+  background: var(--primary); color: #fff;
+  font-size: .78rem; font-weight: 700; flex-shrink: 0;
+}
+.cardName { font-size: 1rem; font-weight: 700; color: var(--text); }
+.cardRole { font-size: .875rem; color: var(--muted2); margin-top: 2px; }
+
+.cardMid { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+.statRow { display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+.statItem { font-size: .875rem; color: var(--muted2); }
+.statItem strong { color: var(--text); }
+
+.timestamp {
+  display: flex; align-items: center; gap: 5px;
+  font-size: .78rem; color: var(--muted2);
+}
+
+@media (max-width: 640px) {
+  .card { flex-direction: column; align-items: flex-start; }
+  .cardMid { align-items: flex-start; }
+  .statRow { justify-content: flex-start; }
+}

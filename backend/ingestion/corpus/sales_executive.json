@@ -1,0 +1,114 @@
+{
+  "role": "Sales Executive",
+  "levels": ["Fresher", "Mid", "Senior"],
+  "questions": [
+    {
+      "id": "se2_t_01",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is the difference between B2B and B2C sales?",
+      "model_answer": "B2B (business-to-business) involves selling products/services to other companies. The sales cycle is longer (weeks to months), involves multiple stakeholders (champion, economic buyer, legal, IT), deal sizes are larger, and decisions are rational/ROI-driven. B2C (business-to-consumer) involves selling to individual consumers. Cycles are shorter (minutes to days), the buyer is often the sole decision-maker, deal sizes are smaller, and decisions are more emotion-driven. B2B requires relationship management, consultative selling, and complex negotiation; B2C requires volume, marketing alignment, and fast lead conversion.",
+      "tip": "Give a concrete example of each: Salesforce selling CRM to a company (B2B) vs. selling a phone on an e-commerce site (B2C).",
+      "tags": ["b2b", "b2c", "sales fundamentals"]
+    },
+    {
+      "id": "se2_t_02",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is SPIN selling? Describe each component.",
+      "model_answer": "SPIN Selling (Neil Rackham) is a consultative sales methodology using four question types: (S)ituation — understand the buyer's current state ('What does your current CRM workflow look like?'); (P)roblem — uncover pain points ('What challenges do you face with manual data entry?'); (I)mplication — amplify the consequences of the problem ('How does that affect your team's reporting accuracy and time?'); (N)eed-Payoff — get the buyer to articulate the value of solving it ('If you could eliminate that manual entry, what would that mean for your team?'). SPIN is effective because it makes the buyer discover the need themselves rather than being sold to.",
+      "tip": "Interviewers may ask you to demonstrate SPIN on the spot — practice running through a scenario for a software product.",
+      "tags": ["spin selling", "sales methodology", "consultative selling"]
+    },
+    {
+      "id": "se2_t_03",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is a sales funnel and what are its typical stages?",
+      "model_answer": "A sales funnel (or pipeline) represents the journey a prospect takes from first contact to closed deal. Typical stages: (1) Awareness/Prospecting — identifying and reaching potential customers; (2) Lead qualification (BANT: Budget, Authority, Need, Timeline); (3) Discovery/Needs analysis — understand their problem in depth; (4) Solution presentation/Demo; (5) Proposal/Quote; (6) Negotiation/Objection handling; (7) Close; (8) Post-sale/Onboarding. Conversion rates at each stage drive the overall revenue forecast. A healthy funnel has enough volume at the top to meet targets even with normal drop-off.",
+      "tip": "Know your conversion numbers. If you have any experience, quote yours: 'My demo-to-close rate was X%.'",
+      "tags": ["sales funnel", "pipeline", "sales fundamentals"]
+    },
+    {
+      "id": "se2_t_04",
+      "type": "technical",
+      "level": "Mid",
+      "question": "What is MEDDIC and how do you use it for enterprise deals?",
+      "model_answer": "MEDDIC is a qualification framework for complex enterprise sales: Metrics (quantifiable business impact), Economic Buyer (who controls the budget), Decision Criteria (how will they evaluate vendors), Decision Process (steps and timeline for decision), Identify Pain (the core business problem), Champion (an internal sponsor who sells on your behalf). You use it as a deal checklist: if you can't answer each element, you have qualification gaps. Incomplete MEDDIC = deals that surprise you with 'no decision' late in the cycle.",
+      "tip": "The Champion element is the most undervalued. Ask: 'Is your champion selling for you when you're not in the room?'",
+      "tags": ["meddic", "enterprise sales", "qualification"]
+    },
+    {
+      "id": "se2_t_05",
+      "type": "technical",
+      "level": "Mid",
+      "question": "How do you handle a pricing objection from a prospect?",
+      "model_answer": "Steps: (1) Don't discount immediately — that signals the price was arbitrary. (2) Acknowledge: 'I hear you — budget is always a consideration.' (3) Understand the objection: is it 'too expensive for what it is' (perceived value gap) or 'we don't have budget right now' (timing/budget issue)? (4) For value gap: reframe ROI — 'At £X, if this saves your team 5 hours/week, it pays for itself in 3 months.' (5) For budget: explore phasing, annual vs monthly billing, smaller initial scope. (6) Only offer a discount with a concession: 'If you commit this quarter, I can...' Never give without getting.",
+      "tip": "Price objections are often value objections in disguise. Diagnose before prescribing.",
+      "tags": ["objection handling", "pricing", "negotiation"]
+    },
+    {
+      "id": "se2_t_06",
+      "type": "technical",
+      "level": "Senior",
+      "question": "How would you build a territory sales plan from scratch?",
+      "model_answer": "Steps: (1) Define the territory (geography, verticals, account sizes). (2) Total Addressable Market analysis — how many accounts, estimated deal sizes. (3) Prioritise accounts using a tiering system (e.g. Tier 1: top 20 strategic accounts; Tier 2: 50 mid-market; Tier 3: SMB self-serve). (4) Set revenue targets with a bottom-up build (pipeline needed = quota / average win rate). (5) Identify coverage gaps — what partnerships, SDR support, or marketing programs are needed? (6) Build an activity plan: prospecting volume per week, events, QBRs. (7) Define leading indicators to track monthly: new meetings, pipeline created, deal progression.",
+      "tip": "Show the bottom-up vs top-down disconnect: leadership assigns a top-down quota; you build bottom-up to validate it. If they don't match, escalate early.",
+      "tags": ["territory planning", "sales strategy", "senior"]
+    },
+    {
+      "id": "se2_t_07",
+      "type": "technical",
+      "level": "Senior",
+      "question": "What is customer success and how does it differ from account management?",
+      "model_answer": "Customer Success (CS) is proactively ensuring customers achieve their desired outcomes with your product, with the goal of reducing churn and driving expansion revenue. Account Management (AM) is traditionally reactive and relationship-focused, primarily focused on contract renewals and upsells. The key difference: CS is metrics/outcome-driven (health scores, product adoption, NPS) and involves the full post-sale journey; AM is more commercially focused on contract value. In modern SaaS, the lines blur — the best customer success organisations do both: drive outcomes AND grow revenue.",
+      "tip": "Mention Net Revenue Retention (NRR) as the CS north star metric: an NRR > 120% means customers are expanding faster than churning.",
+      "tags": ["customer success", "account management", "saas"]
+    },
+    {
+      "id": "se2_b_01",
+      "type": "behavioral",
+      "level": "Fresher",
+      "question": "Tell me about a time you persuaded someone to change their mind.",
+      "model_answer": "STAR: Situation — my study group wanted to present a standard slide deck for our marketing final. I believed an interactive product demo would be more persuasive. Task — I needed to convince 4 group members with limited time to change course. Action — I built a quick prototype in 2 hours, showed it to one open-minded teammate, and asked them to share their reaction in the next group meeting. The live demo spoke for itself — the group shifted. I also acknowledged the risk and offered to take responsibility for the interactive elements so no one else's grade was at stake. Result — we scored 87/100, the highest in our cohort, and the lecturer specifically cited the format as exceptional.",
+      "tip": "Showing you removed risk for others to get buy-in is a mature persuasion move worth highlighting.",
+      "tags": ["persuasion", "influence", "behavioral"]
+    },
+    {
+      "id": "se2_b_02",
+      "type": "behavioral",
+      "level": "Mid",
+      "question": "Describe a time you lost a significant deal. What did you learn?",
+      "model_answer": "STAR: Situation — I was 90% through a 6-month enterprise deal when the prospect chose a competitor. Task — I needed to understand why and improve. Action — I ran an honest win/loss debrief with the prospect's champion. Findings: our competitor had a stronger integration story with the prospect's existing ERP, and I hadn't surfaced that technical dependency until proposal stage. Learning: I now map technical integrations in the discovery call (week 2, not proposal stage) and involve a solutions engineer earlier in the cycle. Result — in the following two enterprise cycles I identified integration risks early and addressed them with POCs before proposals. Both deals closed.",
+      "tip": "The win/loss debrief with the actual prospect is rare and impressive. Mention it explicitly.",
+      "tags": ["resilience", "learning from failure", "behavioral"]
+    },
+    {
+      "id": "se2_b_03",
+      "type": "behavioral",
+      "level": "Senior",
+      "question": "Tell me about a time you built a sales team or coached a struggling rep to success.",
+      "model_answer": "STAR: Situation — a mid-market rep on my team had been below quota for 3 consecutive quarters; they were at risk of a PIP. Task — as their manager, I had one quarter to make a measurable difference or initiate formal process. Action — I shadowed 5 discovery calls and identified the root cause: they were pitching features instead of asking questions, skipping SPIN entirely. I set up weekly call coaching sessions, reviewed call recordings together, and created a 'discovery card' with 8 questions to use as a reference. I also paired them with our top rep as a buddy. Result — they hit 94% of quota in Q4, the first quarter above 80% in 9 months. They hit 107% the following quarter.",
+      "tip": "Specificity wins: 3 quarters below quota → 107% in 2 quarters. That story arc is compelling.",
+      "tags": ["coaching", "leadership", "sales management"]
+    },
+    {
+      "id": "se2_t_08",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is cold outreach and what makes a cold email effective?",
+      "model_answer": "Cold outreach is contacting prospects who have no prior relationship with you. An effective cold email: (1) Personalised subject line (their name/company, a relevant trigger); (2) Opens with a relevant observation — a recent company announcement, shared connection, or specific pain indicator; (3) One clear value proposition tied to a business outcome, not features; (4) Social proof (a relevant customer example); (5) Single, low-friction CTA: 'Worth a 20-minute call this week?'; (6) Under 150 words. The purpose is to earn a conversation, not close a deal. Spray-and-pray bulk emails with zero personalisation have <1% reply rates.",
+      "tip": "Show you know reply rate benchmarks: personalised 3-step sequences average 15-25% reply rates; generic blasts get 1-3%.",
+      "tags": ["cold outreach", "prospecting", "email"]
+    },
+    {
+      "id": "se2_b_04",
+      "type": "behavioral",
+      "level": "Fresher",
+      "question": "Why do you want to work in sales?",
+      "model_answer": "Sales is one of the few roles where your direct impact on the business is immediately measurable — every quarter you can see exactly how much value you created. I'm drawn to the combination of strategic thinking (understanding a customer's business deeply enough to connect your solution to their goals) and the human element (building trust, navigating organisations, and genuinely helping people solve real problems). I also thrive in competitive, goal-driven environments where effort and skill translate directly to results. Sales suits how I'm wired.",
+      "tip": "Avoid 'I like talking to people' — that's weak. Lead with the strategic and measurable aspects of sales.",
+      "tags": ["motivation", "career", "behavioral"]
+    }
+  ]
+}

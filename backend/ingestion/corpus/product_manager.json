@@ -1,0 +1,123 @@
+{
+  "role": "Product Manager",
+  "levels": ["Fresher", "Mid", "Senior"],
+  "questions": [
+    {
+      "id": "pm_t_01",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is a product roadmap and what should it include?",
+      "model_answer": "A product roadmap is a strategic document that communicates the vision, direction, priorities, and progress of a product over time. It should include: product vision/goals (the 'why'), time horizons (now/next/later or quarterly themes), major initiatives or epics, key milestones and launches, dependencies, and success metrics for each initiative. Good roadmaps are outcomes-based (focused on customer problems and business results) rather than feature-based (a list of things to build).",
+      "tip": "Distinguish between an outcome roadmap (preferred) and a feature roadmap. Interviewers at modern product companies will push back on pure feature lists.",
+      "tags": ["roadmapping", "strategy", "pm fundamentals"]
+    },
+    {
+      "id": "pm_t_02",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "How would you prioritise a backlog with limited engineering resources?",
+      "model_answer": "Use a prioritisation framework. RICE: Score = (Reach × Impact × Confidence) / Effort. ICE: Impact, Confidence, Ease. MoSCoW: Must have, Should have, Could have, Won't have. Start by aligning items to strategic goals, then score them. Always consider: (1) customer impact (pain severity × frequency), (2) business value (revenue, retention), (3) effort and risk, (4) dependencies. Hold a prioritisation session with engineering and design to validate effort estimates. Revisit the backlog at least monthly.",
+      "tip": "Show you can handle stakeholder pressure: 'I use data plus structured frameworks so prioritisation decisions are defensible, not political.'",
+      "tags": ["prioritisation", "backlog", "pm fundamentals"]
+    },
+    {
+      "id": "pm_t_03",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is the difference between a user story and an epic?",
+      "model_answer": "An epic is a large body of work that can be broken down into smaller pieces; it represents a significant feature or goal (e.g. 'User Authentication System'). A user story is a small, specific piece of work described from the user's perspective: 'As a [user], I want to [action] so that [benefit].' Stories should be INVEST: Independent, Negotiable, Valuable, Estimable, Small, Testable. An epic typically contains multiple user stories; a sprint delivers several stories contributing to an epic.",
+      "tip": "Write a sample user story live if asked: it shows you genuinely understand the format.",
+      "tags": ["agile", "user stories", "pm fundamentals"]
+    },
+    {
+      "id": "pm_t_04",
+      "type": "technical",
+      "level": "Mid",
+      "question": "How do you define and measure product-market fit?",
+      "model_answer": "Product-market fit (PMF) means the product satisfies a strong market demand. Key indicators: (1) Sean Ellis 'how disappointed' survey — if >40% of active users say they'd be 'very disappointed' if the product disappeared, you likely have PMF; (2) Retention curves that flatten rather than continuing to decline (a flat retention curve means some users find the product indispensable); (3) Organic growth / NPS > 50; (4) Revenue retention (net revenue retention > 100% for SaaS). PMF is not binary — it's a direction, and you reach it segment by segment.",
+      "tip": "Mention that you can have PMF in a niche before expanding. Over-expansion before PMF is a common startup killer.",
+      "tags": ["product strategy", "pmf", "metrics"]
+    },
+    {
+      "id": "pm_t_05",
+      "type": "technical",
+      "level": "Mid",
+      "question": "Walk me through how you would conduct a competitive analysis.",
+      "model_answer": "Steps: (1) Identify competitors — direct (same solution, same problem), indirect (different solution, same problem), and substitutes. (2) Define evaluation criteria aligned to your customers' decision factors: pricing, features, UX, integrations, support, performance. (3) Gather data: product trial, public reviews (G2, Capterra), analyst reports, job postings (job ads reveal what they're building), sales win/loss data. (4) Organise findings in a comparison matrix. (5) Identify whitespace — gaps competitors don't address that your users need. (6) Update quarterly; competitive landscape shifts.",
+      "tip": "Always connect competitive analysis to a product decision. Raw data without 'so what' is not analysis.",
+      "tags": ["competitive analysis", "strategy", "market research"]
+    },
+    {
+      "id": "pm_t_06",
+      "type": "technical",
+      "level": "Senior",
+      "question": "How would you approach building a 0-to-1 product versus improving an existing product?",
+      "model_answer": "0-to-1 (new product): focus on deep customer discovery (jobs-to-be-done interviews), build a tight feedback loop with early adopters, minimise scope to the core value proposition, treat everything as an experiment, and define a clear beachhead market. Metrics: engagement, retention, and qualitative signal over revenue. Improving existing product: you have data — use funnels, cohorts, and A/B testing to identify friction and opportunity; changes must not break existing user mental models; consider technical debt; success metrics are more quantitative (conversion, NPS delta, revenue impact). The key difference: 0-to-1 requires more qualitative discovery; 1-N requires more quantitative optimisation.",
+      "tip": "Interviewers love this question because it separates generalists from those who've actually done both. Be honest about which you've done.",
+      "tags": ["product strategy", "0-to-1", "growth"]
+    },
+    {
+      "id": "pm_t_07",
+      "type": "technical",
+      "level": "Senior",
+      "question": "What metrics would you track for a SaaS subscription product and why?",
+      "model_answer": "Core SaaS metrics: (1) MRR/ARR — monthly/annual recurring revenue, the health metric. (2) Churn rate — monthly subscriber loss; <2% monthly is healthy for SMB. (3) Net Revenue Retention (NRR) — expansion minus churn; >100% means growth from existing customers alone. (4) CAC (Customer Acquisition Cost) vs LTV (Lifetime Value) — LTV:CAC > 3 is a benchmark for a healthy unit economics model. (5) Time to Value (TTV) — how quickly users reach the 'aha moment'. (6) DAU/MAU — engagement ratio. (7) NPS — leading indicator of retention. Prioritise NRR and TTV as the most actionable.",
+      "tip": "Show you can connect a metric to a concrete decision: 'If TTV is high, I'd invest in onboarding improvement, not acquisition.'",
+      "tags": ["saas metrics", "analytics", "business"]
+    },
+    {
+      "id": "pm_b_01",
+      "type": "behavioral",
+      "level": "Fresher",
+      "question": "Tell me about a time you had to gather requirements from multiple stakeholders with conflicting priorities.",
+      "model_answer": "STAR: Situation — for a university project, marketing wanted a flashy landing page with animations; the accessibility team insisted on a screen-reader-friendly, minimalist design. Task — I needed to align both groups into a single specification. Action — I ran individual stakeholder interviews to understand the underlying needs (marketing: conversion; accessibility: compliance and inclusivity). I reframed the discussion around shared goals and proposed a design with high-contrast, readable typography that still had a distinctive visual style. I facilitated one joint session to review the prototype. Result — both teams approved the design; the page met WCAG 2.1 AA and achieved a 12% higher click-through rate than the previous version.",
+      "tip": "Show you uncovered root needs, not just surface requests. That's the PM superpower.",
+      "tags": ["stakeholder management", "requirements", "behavioral"]
+    },
+    {
+      "id": "pm_b_02",
+      "type": "behavioral",
+      "level": "Mid",
+      "question": "Describe a product decision you made that turned out to be wrong. What did you learn?",
+      "model_answer": "STAR: Situation — I pushed to add advanced filter functionality to our search feature, convinced it was a top user need. Task — I led the prioritisation and spec. Action — we shipped after 3 sprints. Result — adoption was 4% and support tickets didn't drop. Post-mortem: I had relied on vocal power users in our Slack community who were atypical. I hadn't looked at usage data first — 80% of searches were simple keyword queries. Learning: always triangulate qualitative user feedback with quantitative usage data before committing engineering resources.",
+      "tip": "Showing you can admit a mistake and articulate a changed behaviour is more impressive than a perfect story.",
+      "tags": ["decision making", "learning", "behavioral"]
+    },
+    {
+      "id": "pm_b_03",
+      "type": "behavioral",
+      "level": "Senior",
+      "question": "Tell me about a time you led a cross-functional team through a high-stakes launch.",
+      "model_answer": "STAR: Situation — we were launching a payments feature in three new countries with a hard regulatory deadline. Task — I was the PM coordinating legal, engineering, compliance, localisation, and marketing across 4 time zones. Action — I created a shared launch tracker with weekly checkpoints, ran daily standups in the final 2 weeks, managed a risk register with owners for each blocker, and escalated one legal dependency to VP level 3 weeks before launch. Result — we launched in all three countries on the compliance deadline with zero P0 bugs and 98% uptime in the first week.",
+      "tip": "Emphasise your process for managing risk and escalation. Senior PMs are measured on predictability, not just outcomes.",
+      "tags": ["cross-functional leadership", "launch", "behavioral"]
+    },
+    {
+      "id": "pm_t_08",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is a North Star Metric and how do you choose one?",
+      "model_answer": "A North Star Metric (NSM) is the single metric that best captures the core value your product delivers to customers and that predicts long-term business success. Criteria for a good NSM: (1) reflects customer value (not a vanity metric like page views); (2) is measurable and unambiguous; (3) leads revenue, not lags it; (4) the whole team can influence it. Examples: Airbnb — nights booked; Spotify — time spent listening; Slack — messages sent per active user. Choose by asking: 'What is the one number that, if it grows, confirms our customers are getting value?'",
+      "tip": "Contrast NSM with vanity metrics (downloads, page views). Interviewers test whether you know the difference.",
+      "tags": ["metrics", "strategy", "pm fundamentals"]
+    },
+    {
+      "id": "pm_t_09",
+      "type": "technical",
+      "level": "Mid",
+      "question": "Describe the process of running a successful sprint review.",
+      "model_answer": "A sprint review is a Scrum ceremony at the end of each sprint where the team demonstrates completed work to stakeholders. Steps: (1) Invite stakeholders (not just the team); (2) Demo working software — not slides; (3) Review which sprint goal items are Done vs incomplete; (4) Gather stakeholder feedback to inform the next sprint; (5) Update the backlog based on feedback; (6) Discuss any changes in market or priority. Keep it ≤4 hours for a 2-week sprint. The outcome is an updated backlog and shared understanding of product direction.",
+      "tip": "Emphasise 'working software' over reports. Stakeholders engaging with real features give better feedback.",
+      "tags": ["agile", "scrum", "sprint"]
+    },
+    {
+      "id": "pm_b_04",
+      "type": "behavioral",
+      "level": "Fresher",
+      "question": "Why do you want to become a Product Manager?",
+      "model_answer": "I'm drawn to product management because it sits at the intersection of customer empathy, business strategy, and technical execution — three areas I'm passionate about. I've always been someone who asks 'why does this exist?' and 'how could this be better?' My background in [relevant experience] gave me exposure to customer problems and I found myself naturally thinking about solutions at the product level, not just my individual contribution. I want to shape the direction of products that genuinely improve people's lives, and PM is the role where I can do that most directly.",
+      "tip": "Make it personal — connect to a specific product experience that sparked your interest. Generic answers don't land.",
+      "tags": ["motivation", "career", "behavioral"]
+    }
+  ]
+}

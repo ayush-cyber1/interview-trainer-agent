@@ -1,0 +1,221 @@
+.page { display: flex; flex-direction: column; gap: 2rem; }
+
+/* Header */
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.title { font-size: 1.9rem; font-weight: 800; color: var(--primary); letter-spacing: -.5px; }
+.sub   { color: var(--muted2); font-size: .95rem; margin-top: 4px; }
+
+.headerActions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.btnOutline {
+  display: flex; align-items: center; gap: 7px;
+  padding: 10px 22px; border-radius: 99px;
+  border: 1.5px solid var(--border); background: var(--surface);
+  color: var(--primary); font-weight: 600; font-size: .875rem;
+  cursor: pointer; transition: all var(--trans);
+}
+.btnOutline:hover { border-color: var(--primary); background: #eef0ff; }
+
+.btnPrimary {
+  display: flex; align-items: center; gap: 7px;
+  padding: 10px 22px; border-radius: 99px;
+  border: none; background: var(--primary);
+  color: #fff; font-weight: 600; font-size: .875rem;
+  cursor: pointer; transition: all var(--trans);
+}
+.btnPrimary:hover { background: var(--primary-dk); transform: translateY(-1px); }
+
+/* Summary row */
+.summaryRow {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.gaugeCard, .recCard, .statsCard {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.cardTitle {
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 1rem;
+}
+
+/* Gauge */
+.gauge { position: relative; }
+.gaugeLabel {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.gaugeScore { font-size: 2.2rem; font-weight: 800; color: var(--primary); }
+.gaugeMax   { font-size: 1rem; color: var(--muted2); }
+
+/* Recs */
+.recList { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.recItem { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; line-height: 1.5; }
+.recBullet {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 2px;
+}
+
+/* Stats */
+.statsGrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 1rem; }
+.statBox {
+  border-radius: 10px;
+  padding: 14px 10px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.statNum { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
+.statLbl { font-size: .75rem; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: .05em; }
+
+.skillsUsed { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.skillsUsedLabel { font-size: .75rem; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: .04em; }
+.skillTags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { background: var(--primary); color: #fff; padding: 3px 10px; border-radius: 99px; font-size: .72rem; font-weight: 500; }
+.tagMore { background: var(--border); color: var(--muted); padding: 3px 10px; border-radius: 99px; font-size: .72rem; font-weight: 500; }
+
+/* Tab panel */
+.tabPanel {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.tabs { display: flex; border-bottom: 1.5px solid var(--border); }
+.tab {
+  flex: 1;
+  padding: 15px 20px;
+  font-size: .9rem; font-weight: 600;
+  color: var(--muted2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--trans);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.tab:hover { background: var(--surface2); color: var(--primary); }
+.tabActive { color: var(--primary); border-bottom: 2.5px solid var(--primary); background: var(--surface2); }
+.tabBadge {
+  background: var(--primary);
+  color: #fff;
+  font-size: .72rem;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+.tabActive .tabBadge { background: var(--primary); }
+
+/* Question list */
+.qList { padding: 1.5rem; display: flex; flex-direction: column; gap: 12px; }
+
+.qcard {
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow var(--trans);
+}
+.qcard:hover { box-shadow: var(--shadow-sm); }
+
+.qtrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--trans);
+}
+.qtrigger:hover { background: var(--surface2); }
+
+.qnum {
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.qtext { flex: 1; font-size: .95rem; font-weight: 600; color: var(--text); line-height: 1.5; }
+
+.qbody {
+  padding: 0 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeIn .2s ease both;
+}
+
+.qsection { display: flex; flex-direction: column; gap: 8px; }
+.qsectionTitle {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .78rem; font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.qanswer {
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--surface2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--primary);
+}
+
+.qtip {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: .875rem;
+  color: #92400e;
+}
+
+@media (max-width: 900px) {
+  .summaryRow { grid-template-columns: 1fr; }
+  .gaugeCard { max-width: 280px; margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  .pageHeader { flex-direction: column; }
+  .headerActions { width: 100%; }
+  .btnOutline, .btnPrimary { flex: 1; justify-content: center; }
+  .statsGrid { grid-template-columns: 1fr 1fr; }
+}

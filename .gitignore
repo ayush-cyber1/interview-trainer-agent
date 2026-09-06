@@ -1,0 +1,68 @@
+﻿# ─────────────────────────────────────────────────────────────────────────────
+# Interview Trainer Agent — .gitignore
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Credentials (NEVER commit these) ─────────────────────────────────────────
+backend/.env
+.env
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ── Chroma vector store (built locally, not committed) ────────────────────────
+backend/vector_store/
+
+# ── Hugging Face / sentence-transformers model cache ─────────────────────────
+.cache/
+*.bin
+*.safetensors
+
+# ── Node / Frontend ───────────────────────────────────────────────────────────
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+.pnpm-store/
+
+# ── OS files ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor / IDE ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+*.zip
+*.tar.gz
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage

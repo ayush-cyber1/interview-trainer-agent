@@ -1,0 +1,50 @@
+/* ─── Global Reset & Variables ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:          #f0f4ff;
+  --surface:     #ffffff;
+  --surface2:    #f7f8ff;
+  --border:      #e0e7ff;
+  --primary:     #4f46e5;
+  --primary-dk:  #3730a3;
+  --primary-lt:  #818cf8;
+  --accent:      #06b6d4;
+  --success:     #10b981;
+  --warning:     #f59e0b;
+  --danger:      #ef4444;
+  --text:        #1e1b4b;
+  --muted:       #6366f1;
+  --muted2:      #9ca3af;
+  --radius:      14px;
+  --shadow:      0 4px 24px rgba(79,70,229,.10);
+  --shadow-sm:   0 2px 8px rgba(79,70,229,.07);
+  --trans:       0.22s cubic-bezier(.4,0,.2,1);
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+/* ─── Utility ───────────────────────────────────────────────────────────── */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+/* ─── Animations ────────────────────────────────────────────────────────── */
+@keyframes fadeIn  { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes spin    { to { transform: rotate(360deg); } }
+@keyframes pulse   { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
+
+.fade-in  { animation: fadeIn .35s ease both; }
+.spin     { animation: spin 1s linear infinite; }
+.pulse    { animation: pulse 1.4s ease infinite; }

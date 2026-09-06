@@ -1,0 +1,123 @@
+{
+  "role": "HR Specialist",
+  "levels": ["Fresher", "Mid", "Senior"],
+  "questions": [
+    {
+      "id": "hr_t_01",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is the difference between recruitment and talent acquisition?",
+      "model_answer": "Recruitment is a reactive, transactional process: a role opens and you fill it as quickly as possible. Talent acquisition is a strategic, proactive function: it focuses on building pipelines for future needs, employer branding, workforce planning, and long-term organisational capability. Recruitment asks 'who can fill this role now?'; talent acquisition asks 'what skills will the organisation need in 2–3 years and how do we attract them before roles open?'",
+      "tip": "Connect this to employer value proposition (EVP) — a key lever in talent acquisition that recruiters rarely manage.",
+      "tags": ["recruitment", "talent acquisition", "hr fundamentals"]
+    },
+    {
+      "id": "hr_t_02",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is an employee value proposition (EVP) and why does it matter?",
+      "model_answer": "An EVP is the unique set of benefits and experiences an organisation offers in exchange for the skills, capabilities, and experience an employee provides. It encompasses compensation, career growth, culture, work-life balance, and purpose. A strong EVP: (1) attracts candidates who self-select for cultural fit, reducing bad hires; (2) improves offer acceptance rates; (3) reduces attrition by setting accurate expectations. Research (Gartner) shows organisations with a compelling EVP can reduce annual employee turnover by nearly 70%.",
+      "tip": "Mention that EVP must be authentic — overpromising damages trust and increases churn.",
+      "tags": ["evp", "employer branding", "hr fundamentals"]
+    },
+    {
+      "id": "hr_t_03",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is the difference between HR policies and HR procedures?",
+      "model_answer": "A policy is a statement of intent — it defines what the organisation will do and why (e.g. 'We are committed to providing equal opportunities to all employees'). A procedure is the step-by-step instructions for implementing a policy (e.g. the exact steps for raising and investigating a grievance). Policies set direction; procedures set action. Both must be consistent with applicable employment law and reviewed regularly.",
+      "tip": "Give one concrete policy-procedure pair: disciplinary policy (what) → disciplinary procedure (how).",
+      "tags": ["hr policy", "compliance", "hr fundamentals"]
+    },
+    {
+      "id": "hr_t_04",
+      "type": "technical",
+      "level": "Mid",
+      "question": "How do you approach designing a performance management system?",
+      "model_answer": "Effective performance management is continuous, not annual. Design steps: (1) Align to business goals via OKRs or SMART goals set at the start of the cycle. (2) Build in regular check-ins (monthly 1:1s) rather than just a year-end review. (3) Use multi-source feedback (360) to reduce manager bias. (4) Separate development conversations from compensation conversations (combining them prevents honest dialogue). (5) Train managers — the system is only as good as the conversations. (6) Calibrate ratings across the organisation to ensure fairness. (7) Close the loop: show employees how their development plan changes based on feedback.",
+      "tip": "Mention that companies like Adobe and Microsoft have moved away from forced ranking — use that as a case study to show contemporary knowledge.",
+      "tags": ["performance management", "hr systems", "talent"]
+    },
+    {
+      "id": "hr_t_05",
+      "type": "technical",
+      "level": "Mid",
+      "question": "What is unconscious bias and how do you reduce it in hiring?",
+      "model_answer": "Unconscious bias is an automatic, often unintentional preference or prejudice toward or against people based on characteristics (gender, ethnicity, name, accent) that affects decisions without awareness. Mitigation in hiring: (1) Structured interviews with standardised questions and scoring rubrics. (2) Blind CV screening (remove name, photo, gender). (3) Diverse interview panels. (4) Bias awareness training for interviewers. (5) Work samples or skills assessments instead of subjective judgements. (6) Track demographic data at each funnel stage and investigate drop-off disparities.",
+      "tip": "Mention specific bias types: affinity bias (hiring people like us), halo effect, confirmation bias. Showing taxonomy demonstrates depth.",
+      "tags": ["unconscious bias", "diversity", "hiring"]
+    },
+    {
+      "id": "hr_t_06",
+      "type": "technical",
+      "level": "Senior",
+      "question": "How would you build an HR analytics function from scratch?",
+      "model_answer": "Stages: (1) Audit existing data — what HRIS data is available, what's missing, what's dirty? (2) Define priority questions tied to business problems (e.g. 'What drives attrition in our engineering team?'). (3) Build a data infrastructure layer — clean HRIS data → a People Analytics warehouse (can start with spreadsheets, grow to Workday/Visier). (4) Create standard dashboards: headcount, attrition, time-to-hire, engagement scores. (5) Move to predictive analytics (flight risk models, succession planning) once descriptive reporting is stable. (6) Build HR business partner capability to interpret and act on data. (7) Govern data privacy and access carefully (GDPR/DPDP).",
+      "tip": "Start with the business question, not the data. Analytics for its own sake creates dashboards nobody uses.",
+      "tags": ["hr analytics", "people analytics", "data"]
+    },
+    {
+      "id": "hr_t_07",
+      "type": "technical",
+      "level": "Senior",
+      "question": "What is organisational design and when should an organisation restructure?",
+      "model_answer": "Organisational design is the process of aligning structure, processes, roles, and culture with strategy. Common structures: functional (by speciality), divisional (by product/geography), matrix (both), and flat/holacratic. Trigger points for restructuring: significant growth or downsizing, strategy pivot (e.g. from product to platform), M&A integration, persistent cross-functional friction, or new market entry. The restructuring process: start with strategy → design principles → structure → role mapping → communication plan → transition management. Always assess culture fit — structure changes without culture change often fail.",
+      "tip": "Mention the 7-S McKinsey framework (Strategy, Structure, Systems, Staff, Skills, Style, Shared values) as a diagnostic tool.",
+      "tags": ["org design", "change management", "hr strategy"]
+    },
+    {
+      "id": "hr_b_01",
+      "type": "behavioral",
+      "level": "Fresher",
+      "question": "Tell me about a time you handled a sensitive employee situation with discretion.",
+      "model_answer": "STAR: Situation — during an internship, a colleague confided they were experiencing workplace harassment. Task — I needed to ensure they received support while maintaining confidentiality appropriately. Action — I listened without judgement, documented the conversation factually, and guided them to the formal reporting process while explaining what protections they had. I did not share details with colleagues. I followed up privately to ensure they had filed a report with HR. Result — the colleague felt supported and pursued the formal channel. I was later commended by the HR manager for handling the situation correctly and sensitively.",
+      "tip": "Emphasise process adherence and empathy together. Confidentiality + correct escalation = HR professional behaviour.",
+      "tags": ["employee relations", "discretion", "behavioral"]
+    },
+    {
+      "id": "hr_b_02",
+      "type": "behavioral",
+      "level": "Mid",
+      "question": "Describe a time you implemented an HR initiative that improved employee engagement.",
+      "model_answer": "STAR: Situation — engagement survey results showed that 60% of employees felt career development opportunities were unclear. Task — I was given 3 months and a small budget to improve this score. Action — I ran focus groups to understand the root cause (no visibility of internal mobility; managers rarely discussed development). I launched a 'Career Conversations' toolkit for managers and introduced an internal job board with explicit growth paths. I ran 3 lunch-and-learn sessions to train managers. Result — next survey showed a 22-point improvement in the 'career development' driver; internal mobility increased by 35% over 6 months.",
+      "tip": "Quantify both the problem (60% score) and the outcome (22-point improvement). Data-driven HR stories are rare and memorable.",
+      "tags": ["employee engagement", "hr programs", "behavioral"]
+    },
+    {
+      "id": "hr_b_03",
+      "type": "behavioral",
+      "level": "Senior",
+      "question": "Tell me about a significant organisational change you led. How did you manage resistance?",
+      "model_answer": "STAR: Situation — we merged two business units, consolidating two separate HR teams into one shared services model. 40% of staff had concerns about role changes. Task — I was the HR lead for the 6-month integration. Action — I created a change network of 'champions' from both original teams, ran weekly Q&A town halls, published a FAQ updated in real-time on the intranet, and ensured every at-risk employee had a 1:1 conversation within the first 2 weeks. I addressed the loudest resistance individually, focusing on WIIFM (What's In It For Me). Result — we retained 94% of key talent through the transition; the new model reduced HR cost-per-employee by 18% within 12 months.",
+      "tip": "Kotter's 8-step change model is a useful framework to mention — shows structured thinking about change management.",
+      "tags": ["change management", "leadership", "behavioral"]
+    },
+    {
+      "id": "hr_t_08",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is onboarding and why is the first 90 days critical for employee retention?",
+      "model_answer": "Onboarding is the process of integrating new employees into the organisation — covering role clarity, culture, relationships, tools, and processes. The first 90 days are critical because: (1) Retention decision: 20% of new hires leave within 45 days (SHRM) — mostly due to poor onboarding or unmet expectations; (2) Performance: structured onboarding improves time-to-productivity by 50% (Glassdoor); (3) Belonging: early relationship-building predicts long-term engagement. A good 90-day plan includes: pre-boarding (paperwork/tools ready before Day 1), cultural immersion, early wins, assigned buddy/mentor, and regular manager check-ins at 30/60/90 days.",
+      "tip": "Mention pre-boarding specifically — Day 1 experience is shaped by what happened before Day 1.",
+      "tags": ["onboarding", "retention", "hr fundamentals"]
+    },
+    {
+      "id": "hr_t_09",
+      "type": "technical",
+      "level": "Mid",
+      "question": "What is total rewards and what are its components?",
+      "model_answer": "Total rewards is the complete package of financial and non-financial benefits an employer provides. WorldatWork framework components: (1) Compensation — base pay, variable pay (bonus, commission), equity; (2) Benefits — health, retirement, leave, insurance; (3) Well-being — mental health, EAP, flexible work; (4) Development — learning, career pathing, mentorship; (5) Recognition — peer/manager awards, spot bonuses. Total rewards strategy aims to attract, retain, and motivate talent cost-effectively. In markets where cash is constrained, non-monetary rewards become key differentiators.",
+      "tip": "Show you can translate total rewards into employee value: 'A $10k salary gap can be offset by flexible work and strong development investment for the right candidate profile.'",
+      "tags": ["compensation", "total rewards", "hr strategy"]
+    },
+    {
+      "id": "hr_b_04",
+      "type": "behavioral",
+      "level": "Fresher",
+      "question": "Why do you want to work in Human Resources?",
+      "model_answer": "I'm passionate about the intersection of people and organisational performance. I believe that the way people are treated, developed, and valued directly determines what an organisation can achieve. What draws me to HR is the opportunity to create systems and experiences that make work better for everyone — from a new hire's first day to a senior leader's development journey. I'm particularly interested in [specific area: e.g. talent development / DEI / people analytics] because [personal reason]. I want to build a career where my work measurably improves both individual lives and business outcomes.",
+      "tip": "Show genuine curiosity about people, not just 'I like helping people' — that's too generic. Connect it to a specific HR function.",
+      "tags": ["motivation", "career", "behavioral"]
+    }
+  ]
+}

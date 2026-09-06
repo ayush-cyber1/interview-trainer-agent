@@ -1,0 +1,161 @@
+{
+  "role": "Software Engineer",
+  "levels": {
+    "fresher": {
+      "technical": [
+        {
+          "id": "se_f_t1",
+          "question": "Explain the difference between a stack and a queue.",
+          "model_answer": "A stack follows Last-In-First-Out (LIFO) order — the last element pushed is the first popped. A queue follows First-In-First-Out (FIFO) — the first element enqueued is the first dequeued. Stacks are used in recursion/undo operations; queues in scheduling/BFS.",
+          "tip": "Draw a quick ASCII diagram in your answer to make the difference crystal-clear."
+        },
+        {
+          "id": "se_f_t2",
+          "question": "What is the time complexity of binary search, and when can you use it?",
+          "model_answer": "Binary search runs in O(log n) time. It requires the input array to be sorted. Each iteration halves the search space by comparing the target with the middle element.",
+          "tip": "Always mention the precondition (sorted array) — interviewers look for that."
+        },
+        {
+          "id": "se_f_t3",
+          "question": "What is object-oriented programming? Name its four pillars.",
+          "model_answer": "OOP is a paradigm that organises code around objects. The four pillars are Encapsulation (bundling data + behavior), Abstraction (hiding implementation details), Inheritance (deriving new classes from existing ones), and Polymorphism (same interface, different behavior).",
+          "tip": "Give a one-line real-world analogy for each pillar to show depth."
+        },
+        {
+          "id": "se_f_t4",
+          "question": "What is the difference between HTTP GET and POST?",
+          "model_answer": "GET retrieves data and appends parameters in the URL; it is idempotent and cacheable. POST submits data in the request body; it is not idempotent and is used for create/update operations where data should not appear in the URL.",
+          "tip": "Mention security implications — sensitive data should never go in a GET URL."
+        },
+        {
+          "id": "se_f_t5",
+          "question": "Explain what a RESTful API is.",
+          "model_answer": "REST (Representational State Transfer) is an architectural style using HTTP. A RESTful API is stateless, uses standard HTTP verbs (GET, POST, PUT, DELETE), identifies resources via URIs, and typically communicates in JSON/XML. Each request contains all information needed to process it.",
+          "tip": "Mention statelessness and the resource-based URL structure — two things many freshers miss."
+        },
+        {
+          "id": "se_f_t6",
+          "question": "What is a deadlock? How can it be prevented?",
+          "model_answer": "A deadlock occurs when two or more processes each hold a resource and wait for the other's resource, causing all to block forever. Prevention strategies include resource ordering (always acquire locks in the same order), using timeouts, or applying deadlock detection algorithms.",
+          "tip": "Use the Coffman conditions (mutual exclusion, hold-and-wait, no preemption, circular wait) to structure your answer."
+        },
+        {
+          "id": "se_f_t7",
+          "question": "What is Git and what is the difference between git merge and git rebase?",
+          "model_answer": "Git is a distributed version control system. `git merge` creates a new merge commit that preserves the complete history of both branches. `git rebase` rewrites commits onto the tip of another branch, producing a linear history. Rebase is cleaner but rewrites history — avoid on shared branches.",
+          "tip": "Interviewers love when you mention the 'never rebase public branches' rule."
+        }
+      ],
+      "behavioral": [
+        {
+          "id": "se_f_b1",
+          "question": "Tell me about a project you built and the biggest challenge you faced.",
+          "model_answer": "Situation: I built a college event management portal as a final-year project. Task: We needed real-time seat booking without double-bookings. Action: I implemented optimistic locking on the database and added WebSocket notifications. Result: The system handled 300 concurrent users during our college fest with zero conflicts.",
+          "tip": "Use the STAR format. Quantify the result — 300 users is far more compelling than 'many users'."
+        },
+        {
+          "id": "se_f_b2",
+          "question": "How do you handle a situation where you are stuck on a problem for a long time?",
+          "model_answer": "I first re-read my own code and documentation carefully (rubber-duck debugging). After 30 minutes I search Stack Overflow and GitHub issues. If still stuck, I ask a teammate with context rather than a vague question. I also take a short break — returning with fresh eyes often reveals the issue immediately.",
+          "tip": "Show that you try independently first but aren't afraid to ask — both extremes are red flags."
+        },
+        {
+          "id": "se_f_b3",
+          "question": "Describe a time you had to learn a new technology quickly.",
+          "model_answer": "Situation: Our team switched from REST to GraphQL mid-project. Task: I had two days to be productive. Action: I completed the official How-to-GraphQL tutorial, ported one small endpoint as a spike, and reviewed the PR with my lead. Result: I was writing production queries by day three and later wrote an internal wiki entry to help the rest of the team.",
+          "tip": "Emphasise the structured approach — tutorial → spike → review. It signals engineering maturity."
+        }
+      ]
+    },
+    "mid": {
+      "technical": [
+        {
+          "id": "se_m_t1",
+          "question": "Explain SOLID principles and give an example of the Single Responsibility Principle.",
+          "model_answer": "SOLID: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion. SRP means a class should have only one reason to change. For example, a UserService that handles both business logic AND sends emails violates SRP — split into UserService and EmailService.",
+          "tip": "Pick an SRP violation from your real work history — shows applied thinking."
+        },
+        {
+          "id": "se_m_t2",
+          "question": "How does database indexing work and when would you avoid adding an index?",
+          "model_answer": "An index is a separate data structure (typically a B-tree) that maps column values to row locations, speeding up reads. Avoid indexes on: columns with very low cardinality (e.g. boolean flags), tables that are write-heavy (indexes slow inserts/updates), and columns rarely used in WHERE/JOIN clauses.",
+          "tip": "Mentioning the B-tree structure and write-overhead trade-off signals you understand the internals."
+        },
+        {
+          "id": "se_m_t3",
+          "question": "What is the difference between horizontal and vertical scaling?",
+          "model_answer": "Vertical scaling adds more resources (CPU/RAM) to a single machine — simpler but has a hardware ceiling. Horizontal scaling adds more machines and distributes load — more complex (requires load balancing, distributed state) but virtually unlimited. Stateless services scale horizontally most easily.",
+          "tip": "Mention a real service you'd choose each approach for (e.g. vertical for a legacy monolith, horizontal for microservices)."
+        },
+        {
+          "id": "se_m_t4",
+          "question": "Explain the CAP theorem.",
+          "model_answer": "In a distributed system you can guarantee at most two of three: Consistency (all nodes see the same data), Availability (every request gets a response), Partition Tolerance (the system continues despite network splits). Since network partitions are unavoidable in practice, you choose between CP (e.g. HBase) or AP (e.g. Cassandra) systems.",
+          "tip": "Relate it to a real database choice you made or would make — theory alone won't impress a mid-level panel."
+        },
+        {
+          "id": "se_m_t5",
+          "question": "What are design patterns? Explain one creational and one structural pattern.",
+          "model_answer": "Design patterns are reusable solutions to common software design problems. Creational — Singleton: ensures only one instance of a class exists (e.g. a DB connection pool). Structural — Adapter: wraps an incompatible interface so it can work with existing code (e.g. wrapping a third-party payment library behind your own PaymentGateway interface).",
+          "tip": "Avoid textbook definitions — ground each pattern in a concrete use case you've encountered."
+        },
+        {
+          "id": "se_m_t6",
+          "question": "How do you approach writing unit tests for a service that has external dependencies?",
+          "model_answer": "I use dependency injection to pass the dependency as a constructor argument, then substitute it with a mock or stub in tests. For example, a UserService that calls an EmailClient gets a MockEmailClient in tests. I aim for 80%+ branch coverage on business logic, focus assertions on behavior not implementation, and use parameterised tests for boundary cases.",
+          "tip": "Mention specific tools (pytest + unittest.mock, Jest + jest.mock) to show you don't just know the theory."
+        }
+      ],
+      "behavioral": [
+        {
+          "id": "se_m_b1",
+          "question": "Describe a time you disagreed with a technical decision and how you handled it.",
+          "model_answer": "Situation: The team decided to use a monorepo with a shared database for two new microservices. Task: I believed shared state would couple the services. Action: I wrote a one-page ADR (Architecture Decision Record) comparing the approaches, presented it in the design review, and suggested a pilot with separate schemas. Result: The team adopted separate schemas; 6 months later we deployed one service independently without touching the other.",
+          "tip": "Show data and process, not just opinion. 'I wrote an ADR' signals engineering maturity."
+        },
+        {
+          "id": "se_m_b2",
+          "question": "Tell me about a production incident you helped resolve.",
+          "model_answer": "Situation: Our payment API response time spiked 10x at midnight. Task: I was on-call. Action: I checked dashboards, found a missing DB index on a query triggered by a new scheduled job, added the index with CONCURRENTLY to avoid downtime, and wrote a post-mortem documenting the root cause. Result: Latency returned to normal in 4 minutes; we added slow-query alerting so it wouldn't recur.",
+          "tip": "Always close with what changed permanently — post-mortems and monitoring improvements show ownership."
+        }
+      ]
+    },
+    "senior": {
+      "technical": [
+        {
+          "id": "se_s_t1",
+          "question": "How would you design a URL shortening service like bit.ly?",
+          "model_answer": "Core components: (1) API server accepting long URLs, (2) hash/base62 encoding to generate short codes (7 chars ≈ 3.5 trillion combinations), (3) NoSQL key-value store (DynamoDB/Redis) mapping code → URL, (4) CDN/cache for read-heavy redirects. Scale: write ~100 RPS, read ~10k RPS → cache 80% of hot URLs in Redis. Add rate limiting, analytics (Kafka → ClickHouse), and custom alias support.",
+          "tip": "Start with requirements clarification and back-of-envelope math before diving into components — interviewers score process heavily."
+        },
+        {
+          "id": "se_s_t2",
+          "question": "Explain eventual consistency and where you've seen it used.",
+          "model_answer": "Eventual consistency means that, given no new updates, all replicas will converge to the same value eventually. DNS propagation is a classic example — a new record might take minutes to spread. Cassandra and DynamoDB use it. It trades strict consistency for high availability and low latency. Suitable for shopping carts, social media likes — not for bank balances.",
+          "tip": "Compare with strong consistency and name a concrete system using each — shows systems depth."
+        },
+        {
+          "id": "se_s_t3",
+          "question": "How do you manage technical debt in a long-running codebase?",
+          "model_answer": "I track debt explicitly (tech-debt label in Jira, ADRs for deferred decisions). Each sprint I negotiate 20% capacity for debt reduction. I prioritise by risk × cost-of-change (high-churn files with poor test coverage get tackled first). I advocate for the strangler-fig pattern for large rewrites — migrate incrementally behind a feature flag rather than a big-bang rewrite.",
+          "tip": "Quantify — '20% sprint capacity' is more credible than 'we make time for it'."
+        }
+      ],
+      "behavioral": [
+        {
+          "id": "se_s_b1",
+          "question": "How do you mentor junior engineers while still delivering your own work?",
+          "model_answer": "I pair-program for the first week on a new concept rather than just reviewing code afterward — it's faster. I establish office hours (30 min twice a week) for async questions. I delegate work at the edge of their comfort zone with a clear definition of done, then do a structured code review instead of rewriting it myself. I track their growth and advocate for their promotion when milestones are hit.",
+          "tip": "Mention a specific junior who grew under your mentorship and what they achieved — concrete evidence trumps description."
+        },
+        {
+          "id": "se_s_b2",
+          "question": "Describe a time you influenced engineering culture or process at your organization.",
+          "model_answer": "Situation: Our team had no post-mortem culture — incidents were quietly fixed. Task: I wanted blameless retrospectives. Action: I introduced a lightweight post-mortem template (5 Why's + action items with owners), ran the first three myself as models, and presented a quarterly incident review to leadership. Result: Post-mortems became a team norm; MTTR dropped 35% over two quarters.",
+          "tip": "Culture changes are senior-level impact — quantify outcome and show that the change stuck without you having to enforce it."
+        }
+      ]
+    }
+  }
+}

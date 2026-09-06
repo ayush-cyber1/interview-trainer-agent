@@ -1,0 +1,141 @@
+{
+  "role": "Data Analyst",
+  "levels": ["Fresher", "Mid", "Senior"],
+  "questions": [
+    {
+      "id": "da_t_01",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is the difference between INNER JOIN, LEFT JOIN, and FULL OUTER JOIN in SQL?",
+      "model_answer": "INNER JOIN returns only rows where there is a match in both tables. LEFT JOIN returns all rows from the left table and matched rows from the right; unmatched right-side values are NULL. FULL OUTER JOIN returns all rows from both tables, with NULLs wherever there is no match. Use LEFT JOIN when you want to keep all records from a primary table regardless of whether a related record exists.",
+      "tip": "Always draw a Venn diagram mentally. Interviewers often test this with a trick: 'Which join gives you rows in A but NOT in B?' (LEFT JOIN + WHERE B.id IS NULL).",
+      "tags": ["sql", "joins", "databases"]
+    },
+    {
+      "id": "da_t_02",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is a NULL value in SQL and how do you handle it?",
+      "model_answer": "NULL represents an unknown or missing value; it is not zero or an empty string. NULL comparisons using = always return UNKNOWN, so you must use IS NULL or IS NOT NULL. Functions like COALESCE(col, default_val) replace NULL with a fallback. Aggregates like COUNT(*) include NULLs; COUNT(col) excludes them. Always check for NULLs in joins, calculations, and filters to avoid silent data errors.",
+      "tip": "Demonstrate with: SELECT COALESCE(salary, 0) FROM employees. Mention NULLIF as the inverse.",
+      "tags": ["sql", "data quality", "fundamentals"]
+    },
+    {
+      "id": "da_t_03",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is the difference between a measure and a dimension in a data warehouse?",
+      "model_answer": "A dimension is a descriptive attribute used for slicing and filtering data (e.g. Country, Product Category, Date). A measure is a numeric value you aggregate (e.g. Revenue, Quantity Sold, Page Views). In a star schema, dimensions live in dimension tables and measures live in the central fact table. This distinction underpins how you build reports: dimensions go on rows/columns; measures go in the values area.",
+      "tip": "Relate this to a concrete dataset: 'In a sales dataset, Date and Region are dimensions; Revenue and Units Sold are measures.'",
+      "tags": ["data warehouse", "bi", "fundamentals"]
+    },
+    {
+      "id": "da_t_04",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "How would you identify and handle duplicate records in a dataset using SQL?",
+      "model_answer": "First identify duplicates with GROUP BY + HAVING: SELECT email, COUNT(*) FROM users GROUP BY email HAVING COUNT(*) > 1. To keep one row, use a CTE with ROW_NUMBER() OVER (PARTITION BY email ORDER BY created_at DESC) and delete rows where row_number > 1. In Pandas, use df.duplicated() to flag and df.drop_duplicates() to remove them, specifying the subset of columns that define uniqueness.",
+      "tip": "Always clarify what 'duplicate' means for the business context before deleting anything.",
+      "tags": ["sql", "data cleaning", "pandas"]
+    },
+    {
+      "id": "da_t_05",
+      "type": "technical",
+      "level": "Mid",
+      "question": "What is a window function in SQL? Give an example.",
+      "model_answer": "A window function performs a calculation across a set of rows related to the current row without collapsing them into a single output row (unlike GROUP BY). Syntax: FUNCTION() OVER (PARTITION BY col ORDER BY col ROWS BETWEEN ...). Example: running total — SELECT order_date, amount, SUM(amount) OVER (PARTITION BY customer_id ORDER BY order_date) AS running_total FROM orders. Common window functions: ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD, SUM, AVG.",
+      "tip": "Distinguish window functions from GROUP BY: 'GROUP BY removes detail rows; window functions keep them.' This is a common follow-up.",
+      "tags": ["sql", "window functions", "analytics"]
+    },
+    {
+      "id": "da_t_06",
+      "type": "technical",
+      "level": "Mid",
+      "question": "Explain the difference between supervised and unsupervised learning with a data-analysis use case for each.",
+      "model_answer": "Supervised learning trains on labelled data to predict an output. Use case: churn prediction — train on historical customers labelled 'churned/retained' to predict future churn probability. Unsupervised learning finds patterns in unlabelled data. Use case: customer segmentation — cluster customers by purchasing behaviour (K-Means) to discover natural groups without predefined labels. The key distinction is whether you have labelled training examples.",
+      "tip": "Mention the evaluation metrics: supervised → accuracy/AUC; unsupervised → silhouette score, elbow method.",
+      "tags": ["machine learning", "data science", "analytics"]
+    },
+    {
+      "id": "da_t_07",
+      "type": "technical",
+      "level": "Mid",
+      "question": "What is the difference between correlation and causation? Why does it matter for analysis?",
+      "model_answer": "Correlation means two variables move together statistically. Causation means one variable directly causes the change in another. They are not the same — confounding variables can create spurious correlations (ice cream sales and drowning rates both rise in summer due to the confounder: hot weather). In analysis, drawing causal conclusions from observational data without controlling for confounders leads to bad business decisions. Use A/B testing or causal inference methods (DiD, IV) to establish causation.",
+      "tip": "Use a memorable example: 'Shoe size correlates with reading ability in children — the confounder is age.'",
+      "tags": ["statistics", "critical thinking", "analytics"]
+    },
+    {
+      "id": "da_t_08",
+      "type": "technical",
+      "level": "Senior",
+      "question": "Walk me through how you would design an A/B test for a new checkout flow.",
+      "model_answer": "Steps: (1) Define hypothesis — 'New flow increases conversion rate.' (2) Define primary metric — conversion rate; secondary — cart abandonment, order value. (3) Calculate sample size using a power analysis (target 80% power, 5% significance, minimum detectable effect of 2pp). (4) Randomise users at the session or user level (user-level avoids novelty effects). (5) Run until required sample size is reached — no peeking. (6) Analyse with a two-proportion z-test. (7) Check for SRM (Sample Ratio Mismatch). (8) Report confidence intervals, not just p-values.",
+      "tip": "Mention the 'peeking problem' and sequential testing (e.g. alpha spending) as a mitigation.",
+      "tags": ["a/b testing", "statistics", "experimentation"]
+    },
+    {
+      "id": "da_t_09",
+      "type": "technical",
+      "level": "Senior",
+      "question": "What are slowly changing dimensions (SCD) and when would you use each type?",
+      "model_answer": "SCDs handle how dimension data changes over time in a data warehouse. Type 1: overwrite old data — use when history is irrelevant (e.g. fixing a typo). Type 2: add a new row with new/old version dates and a current flag — use when history matters (e.g. customer address changes; you still need to tie past orders to the old address). Type 3: add a new column for the previous value — limited history, low change frequency. Type 2 is the industry standard for most analytical dimensions.",
+      "tip": "Explain the dbt snapshot feature as the modern implementation of SCD Type 2.",
+      "tags": ["data warehouse", "dimensional modeling", "scd"]
+    },
+    {
+      "id": "da_t_10",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What is the purpose of GROUP BY in SQL? How does it differ from ORDER BY?",
+      "model_answer": "GROUP BY aggregates rows sharing the same value in specified columns, collapsing them into one row per group. It is used with aggregate functions (SUM, COUNT, AVG, MAX, MIN). ORDER BY simply sorts the result set by one or more columns without aggregating. Example: SELECT department, COUNT(*) FROM employees GROUP BY department ORDER BY COUNT(*) DESC — groups by department, counts per group, then sorts the result.",
+      "tip": "Common trick question: 'Can you ORDER BY a column not in SELECT?' Yes in most databases. 'Can you GROUP BY without SELECT?' No — GROUP BY shapes the SELECT result.",
+      "tags": ["sql", "aggregation", "fundamentals"]
+    },
+    {
+      "id": "da_b_01",
+      "type": "behavioral",
+      "level": "Fresher",
+      "question": "Tell me about a time you communicated a complex data finding to a non-technical audience.",
+      "model_answer": "STAR: Situation — I analysed survey data for a college project and found that student satisfaction scores dropped significantly for online vs in-person classes, but only in STEM subjects. Task — I had to present findings to the faculty committee, mostly non-technical staff. Action — I replaced regression outputs with a simple bar chart comparison, used plain language ('STEM students rated online classes 2 stars lower on average'), and tied findings to a concrete recommendation. Result — the committee immediately grasped the issue and approved a hybrid lab-session pilot.",
+      "tip": "Lead with the 'so what', not the methodology. Non-technical stakeholders care about decisions, not p-values.",
+      "tags": ["communication", "data storytelling", "behavioral"]
+    },
+    {
+      "id": "da_b_02",
+      "type": "behavioral",
+      "level": "Mid",
+      "question": "Describe a situation where your data analysis led to a decision that saved time or money.",
+      "model_answer": "STAR: Situation — our team was spending $8k/month on a marketing channel that sales assumed was high-performing. Task — I was asked to validate the attribution model. Action — I ran a multi-touch attribution analysis and found the channel contributed to only 3% of closed deals but was credited with 25% under the last-click model. I also ran a holdout test to confirm. Result — the budget was reallocated to two channels with 4× better ROI, saving $5k/month while maintaining revenue.",
+      "tip": "The dollar figure makes this memorable. Always frame analysis impact in business terms.",
+      "tags": ["business impact", "analytical skills", "behavioral"]
+    },
+    {
+      "id": "da_b_03",
+      "type": "behavioral",
+      "level": "Senior",
+      "question": "Tell me about a time you handled a data quality issue that was affecting business decisions.",
+      "model_answer": "STAR: Situation — monthly revenue reports showed an unexplained 15% spike that the finance team was about to present to the board. Task — I had 48 hours to investigate. Action — I traced the spike to a pipeline bug where a currency conversion step was applying today's exchange rate to historical records, inflating past USD figures. I patched the pipeline, re-ran a historical backfill, documented the root cause, and added a data quality check (revenue delta > 10% month-on-month triggers a Slack alert). Result — the corrected report was delivered before the board meeting; the alert has caught two similar issues since.",
+      "tip": "Show you fixed the root cause AND added a preventive control. That's the senior-level move.",
+      "tags": ["data quality", "data engineering", "behavioral"]
+    },
+    {
+      "id": "da_t_11",
+      "type": "technical",
+      "level": "Mid",
+      "question": "What is data normalisation and when would you intentionally denormalise?",
+      "model_answer": "Normalisation organises data to reduce redundancy by splitting tables and linking them via foreign keys (1NF → 2NF → 3NF → BCNF). It ensures update anomalies are prevented. Denormalisation intentionally adds redundancy (pre-joined columns, pre-aggregated fields) to improve read performance for analytics. You denormalise in OLAP/reporting layers where write frequency is low and read speed is critical — for example, storing customer_name in an orders fact table to avoid a join at query time.",
+      "tip": "Relate to the OLTP vs OLAP duality: 'Normalise for OLTP writes; denormalise for OLAP reads.'",
+      "tags": ["databases", "data modeling", "sql"]
+    },
+    {
+      "id": "da_t_12",
+      "type": "technical",
+      "level": "Fresher",
+      "question": "What tools have you used for data visualisation and what makes a good chart?",
+      "model_answer": "Common tools: Tableau, Power BI, Looker, matplotlib/seaborn (Python), ggplot2 (R), and Google Data Studio. A good chart: (1) has a clear title stating the insight, not just the topic ('Revenue grew 40% YoY' vs 'Monthly Revenue'); (2) uses the right chart type (bar for comparisons, line for trends, scatter for correlations, pie only for ≤5 parts totalling 100%); (3) removes chart junk (unnecessary gridlines, 3D effects); (4) uses colour purposefully and is colour-blind friendly.",
+      "tip": "Mention Edward Tufte's data-ink ratio principle if you want to impress.",
+      "tags": ["visualisation", "tools", "communication"]
+    }
+  ]
+}
