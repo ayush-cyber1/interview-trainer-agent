@@ -31,26 +31,7 @@ cd interview-trainer-agent
 cp .env.example backend/.env
 ```
 
-Open `backend/.env` and fill in **all four values**:
 
-```dotenv
-# Your IBM Cloud API key
-# IBM Cloud → Manage → Access (IAM) → API keys → Create
-WATSONX_API_KEY=<paste your key here>
-
-# watsonx.ai Project ID
-# watsonx.ai → your project → Manage → General → Project ID
-WATSONX_PROJECT_ID=<paste your project ID here>
-
-# LLM Model ID — change ONLY this line to switch to Granite when available
-# Current value: meta-llama/llama-3-3-70b-instruct
-# Future Granite example: ibm/granite-13b-instruct-v2
-WATSONX_MODEL_ID=meta-llama/llama-3-3-70b-instruct
-
-# Full watsonx.ai REST endpoint (include path + version string exactly as shown)
-# Example: https://eu-gb.ml.cloud.ibm.com/ml/v1/text/generation?version=2023-05-29
-WATSONX_URL=https://eu-gb.ml.cloud.ibm.com/ml/v1/text/generation?version=2023-05-29
-```
 
 > **Never commit `backend/.env`** — it is already listed in `.gitignore`.  
 > Only `.env.example` (with empty values) is committed.
