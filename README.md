@@ -131,22 +131,10 @@ Open **http://localhost:5173** in your browser.
 
 ---
 
-## 9. Switching to a Granite model
-
-When IBM Granite becomes available in your watsonx.ai project catalog:
-
-1. Open `backend/.env`.
-2. Change **only** this one line:
-   ```dotenv
-   WATSONX_MODEL_ID=ibm/granite-13b-instruct-v2
-   ```
-3. Restart the backend (`uvicorn main:app --reload --port 8000`).
-
-No other change is needed anywhere in the codebase.
 
 ---
 
-## 10. Project structure
+## 9. Project structure
 
 Every folder and meaningful file is annotated so you can find any piece of the project just by reading this tree.
 
@@ -220,7 +208,7 @@ interview-trainer-agent/
 
 ---
 
-## 11. Troubleshooting
+## 10. Troubleshooting
 
 | Symptom | Fix |
 |---|---|
