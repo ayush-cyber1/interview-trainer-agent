@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: interview-trainer-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: WATSONX_API_KEY
+        sync: false
+      - key: WATSONX_PROJECT_ID
+        sync: false
+      - key: WATSONX_MODEL_ID
+        sync: false
+      - key: WATSONX_URL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+    plan: free

@@ -3,7 +3,12 @@
 import axios from 'axios'
 import type { GenerateResponse, ProfileData } from './types'
 
-const BASE = '/api'
+// In development Vite proxies /api → localhost:8000.
+// In production set VITE_API_BASE_URL to your Render backend URL,
+// e.g. https://interview-trainer-backend.onrender.com
+const BASE = import.meta.env.VITE_API_BASE_URL
+  ? import.meta.env.VITE_API_BASE_URL.replace(/\/$/, '')
+  : '/api'
 
 export async function submitProfile(
   data: Omit<ProfileData, 'skills'>,
