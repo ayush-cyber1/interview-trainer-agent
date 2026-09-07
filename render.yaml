@@ -3,6 +3,8 @@ services:
     name: interview-trainer-backend
     runtime: python
     rootDir: backend
+    # sentence-transformers only needed to rebuild embeddings.json locally.
+    # At runtime the server only needs numpy (already in requirements.txt).
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:

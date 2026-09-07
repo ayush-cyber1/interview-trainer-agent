@@ -31,7 +31,8 @@ class Settings(BaseSettings):
 
     # ── Local paths ───────────────────────────────────────────────────────────
     CORPUS_DIR: Path = BASE_DIR / "ingestion" / "corpus"
-    CHROMA_DB_PATH: Path = BASE_DIR / "vector_store" / "chroma_db"
+    # JSON flat-file vector store (replaces chromadb — no heavy runtime deps)
+    VECTOR_STORE_PATH: Path = BASE_DIR / "vector_store" / "embeddings.json"
 
     # ── Retrieval ─────────────────────────────────────────────────────────────
     RETRIEVAL_TOP_K: int = 6

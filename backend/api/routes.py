@@ -42,7 +42,7 @@ _session: dict[str, dict] = {}
 
 @router.get("/health", response_model=HealthResponse)
 async def health():
-    db_path = settings.CHROMA_DB_PATH
+    db_path = settings.VECTOR_STORE_PATH
     vector_store_status = "ok" if db_path.exists() else "not built — run build_vector_store.py"
     watsonx_ok = bool(settings.WATSONX_API_KEY and settings.WATSONX_PROJECT_ID and settings.WATSONX_URL)
     return HealthResponse(
@@ -139,7 +139,7 @@ async def generate(req: GenerateRequest):
             level=req.experience_level,
             top_k=settings.RETRIEVAL_TOP_K,
             embedding_model=settings.EMBEDDING_MODEL,
-            db_path=settings.CHROMA_DB_PATH,
+            db_path=settings.VECTOR_STORE_PATH,
         )
     except Exception as exc:
         raise HTTPException(

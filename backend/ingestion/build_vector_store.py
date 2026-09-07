@@ -2,23 +2,21 @@
 backend/ingestion/build_vector_store.py
 ─────────────────────────────────────────────────────────────────────────────
 Run this script ONCE (or whenever you add corpus files) to embed all corpus
-questions and persist them to the Chroma vector store.
+questions and persist them to a lightweight JSON vector store.
+
+Uses sentence-transformers locally to produce embeddings, then saves them as
+a plain JSON file (vector_store/embeddings.json).  The FastAPI server loads
+that file at startup using only numpy — no chromadb, no onnxruntime.
 
 Usage:
     cd backend
     python -m ingestion.build_vector_store
-
-No watsonx.ai credentials needed — embeddings are 100% local via
-sentence-transformers (all-MiniLM-L6-v2).
 ─────────────────────────────────────────────────────────────────────────────
 """
 
 import json
 import sys
 from pathlib import Path
-
-import chromadb
-from sentence_transformers import SentenceTransformer
 
 # ── resolve paths via config ───────────────────────────────────────────────
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -101,15 +99,18 @@ def _flatten_corpus(corpus_dir: Path) -> list[dict]:
     return chunks
 
 
-def build(force: bool = False) -> None:
+def build() -> None:
+    # sentence-transformers is only needed at build time, not at server runtime
+    from sentence_transformers import SentenceTransformer
+
     corpus_dir: Path = settings.CORPUS_DIR
-    db_path: Path = settings.CHROMA_DB_PATH
+    out_path: Path = settings.VECTOR_STORE_PATH
 
     if not corpus_dir.exists():
         print(f"[ERROR] Corpus directory not found: {corpus_dir}")
         sys.exit(1)
 
-    db_path.mkdir(parents=True, exist_ok=True)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
 
     print(f"[1/4] Loading embedding model: {settings.EMBEDDING_MODEL}")
     model = SentenceTransformer(settings.EMBEDDING_MODEL)
@@ -121,44 +122,28 @@ def build(force: bool = False) -> None:
         sys.exit(1)
     print(f"       Found {len(chunks)} chunks across {len(list(corpus_dir.glob('*.json')))} files.")
 
-    print("[3/4] Connecting to Chroma …")
-    client = chromadb.PersistentClient(path=str(db_path))
-
-    collection_name = "interview_corpus"
-    if force:
-        try:
-            client.delete_collection(collection_name)
-            print("       Deleted existing collection (--force).")
-        except Exception:
-            pass
-
-    collection = client.get_or_create_collection(
-        name=collection_name,
-        metadata={"hnsw:space": "cosine"},
-    )
-
-    existing_ids = set(collection.get(include=[])["ids"])
-    new_chunks = [c for c in chunks if c["id"] not in existing_ids]
-
-    if not new_chunks:
-        print(f"       All {len(chunks)} chunks already indexed. Nothing to do.")
-        return
-
-    print(f"[4/4] Embedding and storing {len(new_chunks)} new chunks …")
-    texts = [c["text"] for c in new_chunks]
+    print("[3/4] Embedding …")
+    texts = [c["text"] for c in chunks]
     embeddings = model.encode(texts, show_progress_bar=True, normalize_embeddings=True)
 
-    collection.add(
-        ids=[c["id"] for c in new_chunks],
-        embeddings=embeddings.tolist(),
-        documents=[c["text"] for c in new_chunks],
-        metadatas=[c["metadata"] for c in new_chunks],
-    )
+    print(f"[4/4] Saving vector store to {out_path} …")
+    store = {
+        "model": settings.EMBEDDING_MODEL,
+        "chunks": [
+            {
+                "id": c["id"],
+                "text": c["text"],
+                "metadata": c["metadata"],
+                "embedding": embeddings[i].tolist(),
+            }
+            for i, c in enumerate(chunks)
+        ],
+    }
+    out_path.write_text(json.dumps(store), encoding="utf-8")
 
-    print(f"\nDone! Vector store built at: {db_path}")
-    print(f"  Total chunks indexed: {collection.count()}")
+    print(f"\nDone! Vector store saved: {out_path}")
+    print(f"  Total chunks indexed: {len(chunks)}")
 
 
 if __name__ == "__main__":
-    force_rebuild = "--force" in sys.argv
-    build(force=force_rebuild)
+    build()
